@@ -15,7 +15,7 @@ if (require.main === module) {
   console.log(`Elapsed time: ${Date.now() - start} ms.`)
 }
 
-export function countValidPasswords(passwords: string[]): number {
+export function countValidPasswords (passwords: string[]): number {
   return passwords.reduce((totalValidPasswords, passwordHash) => {
     if (isPasswordValidBasedOnAmountOfLetters(passwordHash)) {
       return totalValidPasswords + 1
@@ -25,9 +25,7 @@ export function countValidPasswords(passwords: string[]): number {
   }, 0)
 }
 
-export function countValidPasswordsBasedOnPosition(
-  passwords: string[]
-): number {
+export function countValidPasswordsBasedOnPosition (passwords: string[]): number {
   return passwords.reduce((totalValidPasswords, passwordHash) => {
     if (isPasswordValidBasedOnLettersPosition(passwordHash)) {
       return totalValidPasswords + 1
@@ -37,7 +35,7 @@ export function countValidPasswordsBasedOnPosition(
   }, 0)
 }
 
-function isPasswordValidBasedOnAmountOfLetters(passwordHash: string): boolean {
+function isPasswordValidBasedOnAmountOfLetters (passwordHash: string): boolean {
   const [policy, letterWithSeparator, password] = passwordHash.split(' ')
   const [letter] = letterWithSeparator.split(':')
   const [min, max] = policy.split('-')
@@ -49,7 +47,7 @@ function isPasswordValidBasedOnAmountOfLetters(passwordHash: string): boolean {
   )
 }
 
-function isPasswordValidBasedOnLettersPosition(passwordHash: string): boolean {
+function isPasswordValidBasedOnLettersPosition (passwordHash: string): boolean {
   const [policy, letterWithSeparator, password] = passwordHash.split(' ')
   const [letter] = letterWithSeparator.split(':')
   const [position1, position2] = policy.split('-')
@@ -63,7 +61,7 @@ function isPasswordValidBasedOnLettersPosition(passwordHash: string): boolean {
   }
 }
 
-function countLetters(letter: string, sentence: string): number {
+function countLetters (letter: string, sentence: string): number {
   const letters = sentence.match(new RegExp(letter, 'gi'))
   return Array.isArray(letters) ? letters.length : 0
 }

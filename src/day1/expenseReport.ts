@@ -1,6 +1,6 @@
 import expenses from './input.json'
 
-export function processExpensesForTwoEntries(expenses: number[]): number {
+export function processExpensesForTwoEntries (expenses: number[]): number {
   for (const expenseA of expenses) {
     const expenseB = expenses.find(
       (expenseB: number) => expenseA + expenseB === 2020
@@ -12,7 +12,7 @@ export function processExpensesForTwoEntries(expenses: number[]): number {
   return -1
 }
 
-export function processExpensesForThreeEntries(expenses: number[]): number {
+export function processExpensesForThreeEntries (expenses: number[]): number {
   for (const expenseA of expenses) {
     for (const expenseB of expenses) {
       const expenseC = expenses.find(

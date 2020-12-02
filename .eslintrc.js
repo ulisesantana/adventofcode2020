@@ -1,23 +1,19 @@
 module.exports = {
   env: {
-    browser: true,
-    es2020: true,
+    es2021: true,
     node: true,
     jest: true
   },
   extends: [
-    'standard-with-typescript',
-    'standard-jsx',
-    'prettier-standard'
+    'standard'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 11,
-    sourceType: 'module',
-    project: './tsconfig.json'
+    ecmaVersion: 12,
+    sourceType: 'module'
   },
-  plugins: ['@typescript-eslint'],
-  rules: {
-    '@typescript-eslint/space-before-function-paren': 'off'
-  }
+  plugins: [
+    '@typescript-eslint'
+  ],
+  rules: {}
 }
