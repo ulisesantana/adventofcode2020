@@ -1,59 +1,22 @@
-# ts-boilerplate
+# Advent of Code 2020
 
-This is a template repository. So just use the template and once you have your repository cloned on your pc just run `npm install` for installing all the dependencies.
+This where I put all the code I used for passing through *Advent of Code 2020*.
 
-## Scripts
+## About Advent of Code
 
-```javascript
-"prestart": "npm run build",
-"start": "node build/index.js",
-"dev": "npm run build -- --watch & nodemon build/index.js",
-"build": "npm run lint && tsc",
-"lint": "./node_modules/.bin/eslint . --ext .ts",
-"lint:fix": "npm run lint -- --fix",
-"test": "jest",
-"test:tdd": "npm t -- --watch"
-```
+Advent of Code is an Advent calendar of small programming puzzles 
+for a variety of skill sets and skill levels that can be solved in
+any programming language you like. People use them as a speed contest,
+interview prep, company training, university coursework, practice problems, 
+or to challenge each other.
 
-## Test config
+You don't need a computer science background to participate - just a little 
+programming knowledge and some problem solving skills will get you pretty far. 
+Nor do you need a fancy computer; every problem has a solution that completes in at 
+most 15 seconds on ten-year-old hardware.
 
-```javascript
-{
-  "roots": [
-    "<rootDir>/src"
- ],
- "testMatch": [
-    "**/__tests__/**/*.+(ts|js)",
-    "**/?(*.)+(spec|test).+(ts|js)"
- ],
- "transform": {
-    "^.+\\.(ts)?$": "ts-jest"
- }
-}
-```
+If you'd like to support Advent of Code, you can do so indirectly by helping to 
+[Share](https://twitter.com/intent/tweet?text=Daily+programming+puzzles+at+Advent+of+Code&url=https%3A%2F%2Fadventofcode%2Ecom%2F&related=ericwastl&hashtags=AdventOfCode) 
+it with others, or directly via PayPal or Coinbase.
 
-## Linter config
-
-```javascript
-{
-  env: {
-    browser: true,
-    es2020: true,
-    node: true,
-    jest: true,
-  },
-  extends: [
-    "standard",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: 11,
-    sourceType: "module",
-  },
-  plugins: ["@typescript-eslint", "prettier"],
-  rules: {},
-}
-```
+Advent of Code is a registered trademark in the United States.
