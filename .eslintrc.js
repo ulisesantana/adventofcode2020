@@ -5,12 +5,13 @@ module.exports = {
     jest: true
   },
   extends: [
-    'standard'
+    'standard-with-typescript'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   plugins: [
     '@typescript-eslint'
