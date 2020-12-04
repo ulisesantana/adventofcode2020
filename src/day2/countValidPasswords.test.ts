@@ -4,7 +4,7 @@ import {
 } from './countValidPasswords'
 
 describe('countValidPasswords should', () => {
-  it('count the number of valid passwords from a given list based on number of required letter', () => {
+  it('count the number of valid passwords based on number of times the required letter appears in the password', () => {
     const passwordsWithPolicy = [
       '1-3 a: abcde',
       '1-3 b: cdefg',
@@ -16,7 +16,7 @@ describe('countValidPasswords should', () => {
 })
 
 describe('countValidPasswordsBasedOnPosition should', () => {
-  it('count the number of valid passwords from a given list based on the position of required letter', () => {
+  it('count the number of valid passwords based on the position of the required letter', () => {
     const passwordsWithPolicy = [
       '1-3 a: abcde',
       '1-3 b: cdefg',

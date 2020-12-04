@@ -1,12 +1,12 @@
-import * as fs from 'fs/promises'
-import * as path from 'path'
-import { TrajectoryComputer } from './TrajectoryComputer'
+import { readFile } from '../utils'
+import { TrajectoryComputer } from './trajectoryComputer'
 
 async function run (): Promise<void> {
-  const map = await fs.readFile(path.resolve('src/day3/input.txt'))
-  const tc = new TrajectoryComputer(map.toString())
+  const map = await readFile('src/day3/input.txt')
+  const tc = new TrajectoryComputer(map)
   const start = Date.now()
 
+  console.log(tc.toString())
   console.log(
     `The amount of trees starting at the top-left corner of the map and following a slope of right 3 and down 1 is ${
         tc.exec().amountOfTreesInTrajectory()
@@ -24,8 +24,6 @@ async function run (): Promise<void> {
       }`
   )
   console.log(`Elapsed time: ${Date.now() - start} ms.`)
-  console.log(tc.toString())
 }
 
-// eslint-disable-next-line no-void
-void run()
+run().catch(console.error)
