@@ -17,10 +17,9 @@ async function run (): Promise<void> {
 }
 
 function getMissingSeatId (boardingPassList: number[]): number {
-  const seatNextToMissingSeat = boardingPassList
+  const [seatNextToMissingSeat] = boardingPassList
     .sort(sortNumberAsc)
     .filter(filterNoCorrelativeSeats)
-    .find(filterFirstAndLast10Rows)
   return seatNextToMissingSeat !== undefined ? seatNextToMissingSeat - 1 : -1
 }
 
@@ -38,13 +37,14 @@ function sortNumberAsc (a: number, b: number): number {
 
 function filterNoCorrelativeSeats (seatId: number, index: number, allSeatIds: number[]): boolean {
   const previousSeatId = allSeatIds[index - 1]
-  if (previousSeatId !== undefined) {
+  const isAVeryFrontSeat = index <= 10
+  const isAVeryBackSeat = index <= allSeatIds.length - 10
+
+  if (previousSeatId !== undefined && !(isAVeryBackSeat && isAVeryFrontSeat)) {
     return seatId - previousSeatId > 1
   } else {
     return false
   }
 }
-
-const filterFirstAndLast10Rows = (seatId: number): boolean => seatId > 87 && seatId < 944
 
 run().catch(console.error)
